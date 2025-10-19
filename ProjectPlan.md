@@ -8,7 +8,7 @@
 Music has become one of the most globally accessible cultural exports in the digital era. Platforms like Spotify and Apple Music have made it possible to quantify listening behavior across countries. 
 However, the popularity of certain genres or artists many times reflect deeper cultural and socioeconomic patterns such as economic status, population demographics, or internet accessibility.
 
-This project aims to explore how global music streaming trends correspond to country-level cultural and socioeconomic indicators. 
+This project aims to explore how global music streaming trends correspond to global/country-level cultural and socioeconomic indicators. 
 By combining publicly available datasets on global music charts with data from international organizations like the World Bank, the goal is to identify patterns in how cultural and economic contexts shape listening behavior. 
 The analysis will of course involve data integration, cleaning, quality assessment, and visualization to reveal cross-country differences and insights into the global diffusion of music culture.
 
@@ -74,28 +74,44 @@ data/processed/music_culture_merged.csv
 
 Week, Task, and Deliverable
 |------|------|--------------|
+
+
 | **Week 6 (Oct 16)** | Finalize datasets and project plan | ProjectPlan.md |
+
+
 | **Week 7–8** | Acquire and clean datasets | Raw CSVs and cleaning notebook |
+
+
 | **Week 9** | Integrate datasets using Pandas | Merged dataset |
+
+
 | **Week 10–11** | Data profiling, quality checks, visualizations | Data quality report |
+
+
 | **Week 12** | Analyze trends, produce plots and summaries | Jupyter notebook & figures |
+
+
 | **Week 13 (Nov 11)** | Submit interim status report | StatusReport.md |
+
+
 | **Week 14–15** | Final analysis, workflow automation, finalize report | README.md, scripts, Box data |
+
+
 | **Week 16 (Dec 10)** | Final project release on GitHub | Final submission |
 
 ---
 
 ## Constraints
 - **Data availability:** Music chart datasets may not cover every country or have consistent date ranges.
-- **Standardization:** Country name variations (e.g., “United States” vs “USA”) could require cleaning.
+- **Standardization:** Country name variations (i.e: “United States” vs “USA”) could require a need cleaning.
 - **Ethical and Legal:** Datasets from Kaggle and World Bank will be verified for public use and proper citation. No personally identifiable information (PII) will be collected.
-- **Time constraint:** As a solo project, workload management and progressive milestones will be critical.
+- **Time constraint:** As a solo project, workload in conjunction with time management and progressive milestones will be crucial for me.
 
 ---
 
 ## Gaps and Future Needs
-- Final dataset selection: Need to confirm which specific Spotify dataset provides the best country-level granularity.
-- Visualization tools: Will experiment with Python libraries such as Seaborn or Plotly for geographic and trend plots.
+- Final dataset selection: Need to confirm which specific Spotify dataset provides the best global/country-level granularity, needs to be to the proper level.
+- Visualization tools: Will experiment with Python libraries like Seaborn or Plotly for geographic and trend plots.
 - Automation: Will evaluate whether to use Snakemake or a Python script for workflow automation.
 - Data quality metrics: Will develop a reproducible quality assessment framework once the integrated dataset is complete.
 
@@ -111,8 +127,8 @@ Week, Task, and Deliverable
 
 ## Expected Outcome
 By the end of this project, I expect to produce:
-- A reproducible workflow that integrates global music and socioeconomic data.
-- A cleaned, merged dataset linking country-level music preferences with cultural indicators.
-- Analytical visualizations and summary statistics showing how cultural and economic variables correlate with listening behavior.
-- Documentation supporting transparency, reproducibility, and ethical use of all data sources.
+- A reproducible workflow that integrates global music and socioeconomic data
+- A cleaned and merged dataset that links global/country-level music preferences with cultural indicators
+- Analytical visualizations as well as summary statistics that shows how cultural and economic variables correlate with listening behavior
+- Documentation along the way that supports transparency, reproducibility, and ethical use of all data sources without saying
 
