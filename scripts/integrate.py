@@ -1,4 +1,5 @@
-# scripts/integrate.py
+#!/usr/bin/env python
+
 import pandas as pd
 from pathlib import Path
 
@@ -10,11 +11,11 @@ def main():
     sp = pd.read_csv(PROC_DIR / "spotify_clean.csv")
     wb = pd.read_csv(PROC_DIR / "worldbank_clean.csv")
 
-    # ensure consistent naming
+    # Ensure consistent string formatting
     sp["country_name"] = sp["country_name"].astype(str).str.strip()
     wb["country_name"] = wb["country_name"].astype(str).str.strip()
 
-    # aggregate Spotify to country level
+    # Aggregate Spotify to country-level statistics
     agg = sp.groupby("country_name").agg(
         avg_popularity=("popularity", "mean"),
         avg_bpm=("bpm", "mean"),
