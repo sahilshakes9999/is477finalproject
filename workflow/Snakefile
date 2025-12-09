@@ -1,1 +1,69 @@
+# workflow/Snakefile
+
+RAW_SPOTIFY = "data/raw/spotify_raw.csv"
+RAW_SPOTIFY_CHECKED = "data/raw/spotify_raw_checked.csv"
+RAW_WORLDBANK = "data/raw/worldbank_raw.csv"
+
+PROC_SPOTIFY = "data/processed/spotify_clean.csv"
+PROC_WORLDBANK = "data/processed/worldbank_clean.csv"
+MERGED = "data/processed/music_culture_merged.csv"
+
+REPORT_SUMMARY = "reports/summary_stats.md"
+FIG_GDP = "figures/gdp_vs_streams.png"
+FIG_NET = "figures/internet_vs_streams.png"
+
+rule all:
+    input:
+        RAW_SPOTIFY_CHECKED,
+        RAW_WORLDBANK,
+        PROC_SPOTIFY,
+        PROC_WORLDBANK,
+        MERGED,
+        REPORT_SUMMARY,
+        FIG_GDP,
+        FIG_NET
+
+rule acquire_worldbank:
+    output: RAW_WORLDBANK
+    shell:
+        "python scripts/acquire_worldbank.py"
+
+rule acquire_spotify:
+    input: RAW_SPOTIFY
+    output: RAW_SPOTIFY_CHECKED
+    shell:
+        "python scripts/acquire_spotify.py"
+
+rule clean_data:
+    input:
+        RAW_WORLDBANK,
+        RAW_SPOTIFY_CHECKED
+    output:
+        PROC_WORLDBANK,
+        PROC_SPOTIFY
+    shell:
+        "python scripts/clean_data.py"
+
+rule integrate:
+    input:
+        PROC_WORLDBANK,
+        PROC_SPOTIFY
+    output:
+        MERGED
+    shell:
+        "python scripts/integrate.py"
+
+rule profile_quality:
+    input: MERGED
+    output: REPORT_SUMMARY
+    shell:
+        "python scripts/profile_quality.py"
+
+rule analyze:
+    input: MERGED
+    output:
+        FIG_GDP,
+        FIG_NET
+    shell:
+        "python scripts/analyze.py"
 
