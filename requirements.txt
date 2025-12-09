@@ -1,1 +1,9 @@
+## all reqs 
 
+pandas
+numpy
+requests
+matplotlib
+ydata-profiling
+pycountry
+snakemake
