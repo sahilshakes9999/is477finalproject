@@ -7,11 +7,11 @@
 
 ## Summary
 
-Music streaming platforms such as Spotify have transformed how people access and engage with music across the globe. As listening behavior becomes increasingly digitized, streaming metrics offer a unique lens into cultural preferences and global media consumption patterns. At the same time, country-level socioeconomic factors—such as income, connectivity, and population size—continue to shape how cultural products spread and which genres gain traction across regions.
+Music streaming platforms like Spotify have transformed how people access and engage with music across the globe. As listening behavior becomes increasingly digitized, streaming metrics offer a unique lens into cultural preferences and global media consumption patterns. At the same time, country-level socioeconomic factors such as income, connectivity, and population size—continue to shape how cultural products spread and which genres gain traction across regions.
 
-This project investigates how Spotify track popularity varies across countries in relation to socioeconomic indicators from the World Bank. By integrating two distinct datasets—(1) **Spotify Top 50 by Country** from Kaggle, and (2) **World Bank Indicators API** (GDP per capita, internet users, and population)—the study explores whether countries with different economic conditions exhibit differing patterns in music popularity. This approach aligns with core IS 477 concepts including data acquisition, cleaning, integration, workflow automation, and reproducibility.
+This project investigates how Spotify track popularity varies across countries in relation to socioeconomic indicators from the World Bank. By integrating two distinct datasets (1) **Spotify Top 50 by Country** from Kaggle and (2) **World Bank Indicators API** (GDP per capita, internet users, and population), the study explores whether countries with different economic conditions exhibit differing patterns in music popularity. This approach aligns with core IS 477 concepts including data acquisition, cleaning, integration, workflow automation, and reproducibility.
 
-An end-to-end reproducible workflow was developed that programmatically acquires World Bank data, cleans and standardizes both datasets, aggregates Spotify track popularity by country, and integrates the information into a unified dataset. The project includes data profiling, quality assessment, exploratory analyses, and visualizations capturing relationships between music popularity and socioeconomic indicators.
+I developed an end-to-end reproducible workflow that programmatically acquires World Bank data, cleans and standardizes both datasets, aggregates Spotify track popularity by country, and integrates the information into a unified dataset. The project includes data profiling, quality assessment, exploratory analyses, and visualizations capturing relationships between music popularity and socioeconomic indicators.
 
 Preliminary findings indicate a positive correlation between GDP per capita and average Spotify popularity scores, suggesting that higher-income countries may gravitate toward more globally dominant mainstream music. Similarly, countries with higher internet penetration rates tend to exhibit greater popularity levels, reinforcing the idea that digital infrastructure directly shapes cultural accessibility.
 
@@ -131,15 +131,15 @@ Future extensions of this project may include:
 
 ## Reproducing This Project
 
-### **1. Clone the repository**
-```bash
-git clone <repo-url>
+1. Clone the repository
+   
+git clone https://github.com/sahilshakes9999/is477finalproject 
 cd is477finalproject
 
-### 2. Install dependencies
+3. Install dependencies
 pip install -r requirements.txt
 
-3. Add the Spotify dataset from Kaggle
+4. Add the Spotify dataset from Kaggle
 
 Save it as:
 
@@ -150,7 +150,6 @@ data/raw/spotify_raw_top50_bycountry.csv
 Using Snakemake:
 
 snakemake --cores 1
-
 
 Or using fallback script:
 
