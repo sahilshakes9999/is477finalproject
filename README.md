@@ -1,5 +1,7 @@
 # README.md
 
+# Analyzing Global Spotify Popularity Through Socioeconomic and Cultural Indicators
+
 ## Summary:
 
 Music streaming platforms such as Spotify have transformed how people access and engage with music across the globe. As listening behavior becomes increasingly digitized, streaming metrics offer a unique lens into cultural preferences and global media consumption patterns. At the same time, country-level socioeconomic factors—such as income, connectivity, and population size—continue to shape how cultural products spread and which genres gain traction across regions.
@@ -90,7 +92,67 @@ Taken together, results suggest:
 * Lower-income countries may maintain more regional music tastes or lack widespread streaming.
 These findings support the hypothesis that cultural consumption is shaped by socioeconomic capacity and technological accessibility.
 
+## future work
+
+Several extensions could deepen the cultural and socioeconomic insights identified in this study. First, future research could incorporate genre clustering using unsupervised learning methods such as k-means or hierarchical clustering, enabling countries to be grouped based on their genre distributions. This would provide a richer understanding of how genre preferences relate to broader cultural identity or regional patterns.
+
+Second, the project could be expanded by integrating UNESCO cultural indicators or OECD creative economy metrics, which would allow comparisons between cultural infrastructure (e.g., number of cultural institutions, arts funding) and streaming behaviors. Such expansions would create a more complete model of cultural engagement.
+
+Third, analyzing multiple years of Spotify data would enable a time-series component. This could reveal how global hits spread, how local genres rise or fall over time, and how socioeconomic trends influence cultural convergence or divergence.
+
+More advanced modeling techniques—including regression analysis, principal component analysis (PCA), or neural embeddings—could also improve the explanatory power of the dataset. Finally, results could be deployed through an interactive dashboard using Plotly Dash or Tableau, enabling policymakers, researchers, or marketers to explore global musical trends dynamically.
+
+## reproducing this project 
+
+Reproducing This Project
+1. Clone the repository
+git clone <your-repo-url>
+cd is477finalproject
+
+2. Install dependencies
+pip install -r requirements.txt
+
+3. Download Spotify dataset from Kaggle
+
+Save it as:
+
+data/raw/spotify_raw_top50_bycountry.csv
+
+4. Run the full automated workflow
+
+Using Snakemake (recommended):
+
+snakemake --cores 1
+
+
+Or using the fallback Python script:
+
+python run_all.py
+
+5. Outputs will appear in:
+
+data/processed/music_culture_merged.csv
+
+figures/gdp_vs_popularity.png
+
+figures/internet_vs_popularity.png
+
+reports/summary_stats.md
+
+6. Access final data via Box
+
+(Insert your Box link here.)
+
+Users should download Box files into:
+
+data/final/
+
 
 # references 
+* Kaggle: Spotify Top 50 by Country Dataset, https://www.kaggle.com/datasets/leonardopena/top-50-spotify-songs-by-each-country
+* World Bank: _World Development Indicators API_, https://data.worldbank.org/
+* pandas documentation: https://pandas.pydata.org/
+* snakemake documentation : https://snakemake.readthedocs.io/en/stable/
+* matplotlib documentation : https://matplotlib.org/
 This project is licensed under the MIT License. See LICENSE for details.
 
