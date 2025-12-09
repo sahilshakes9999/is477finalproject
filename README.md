@@ -89,3 +89,8 @@ Taken together, results suggest:
 * Economic resources + digital infrastructure → greater access to globally popular music.
 * Lower-income countries may maintain more regional music tastes or lack widespread streaming.
 These findings support the hypothesis that cultural consumption is shaped by socioeconomic capacity and technological accessibility.
+
+
+# references 
+This project is licensed under the MIT License. See LICENSE for details.
+
