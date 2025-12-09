@@ -176,15 +176,54 @@ data/final/
 
 References
 
+Citations for Each Python Package:
+Pandas
+
+McKinney, W., & others. pandas: Powerful Python data analysis toolkit. Version 2.0.0+. Python Software Foundation. https://pandas.pydata.org/
+
+NumPy
+
+Harris, C. R., Millman, K. J., van der Walt, S. J., et al. (2020). Array programming with NumPy. Nature, 585, 357–362. https://numpy.org/
+
+Requests
+
+Reitz, K. (2023). Requests: HTTP for Humans. Python Software Foundation. https://requests.readthedocs.io/
+
+Matplotlib
+
+Hunter, J. D. (2007). Matplotlib: A 2D graphics environment. Computing in Science & Engineering, 9(3), 90–95. https://matplotlib.org/
+
+ydata-profiling
+
+YData Labs. (2023). ydata-profiling: Open-source data profiling for Python. https://github.com/ydataai/ydata-profiling
+
+pycountry
+
+Fodor, S. (2022). pycountry: ISO country, subdivision, and language lists for Python. https://pypi.org/project/pycountry/
+
+Snakemake
+
+Mölder, F., Jablonski, K. P., Letcher, B., et al. (2021). Sustainable data analysis with Snakemake. F1000Research, 10(33). https://snakemake.github.io/
+
 Kaggle. Spotify Top 50 by Country Dataset. https://www.kaggle.com/datasets/leonardopena/top-50-spotify-songs-by-each-country
 
 World Bank. World Development Indicators API. https://data.worldbank.org
 
-Pandas Documentation — https://pandas.pydata.org
+Python Libraries
 
-Snakemake Documentation — https://snakemake.readthedocs.io
+McKinney, W., & contributors. pandas: Python Data Analysis Library. Version ≥2.0.0. https://pandas.pydata.org/
 
-Matplotlib Documentation — https://matplotlib.org
+Harris, C. R., Millman, K. J., van der Walt, S. J., et al. (2020). Array programming with NumPy. Nature, 585, 357–362. https://numpy.org/
+
+Reitz, K. (2023). Requests: HTTP for Humans. https://requests.readthedocs.io/
+
+Hunter, J. D. (2007). Matplotlib: A 2D graphics environment. Computing in Science & Engineering, 9(3), 90–95. https://matplotlib.org/
+
+YData Labs. (2023). ydata-profiling: Open-source data profiling library. https://github.com/ydataai/ydata-profiling
+
+Fodor, S. (2022). pycountry: ISO country, subdivision, and language definitions. https://pypi.org/project/pycountry/
+
+Mölder, F., Jablonski, K. P., Letcher, B., et al. (2021). Sustainable data analysis with Snakemake. F1000Research, 10(33). https://snakemake.github.io/
 
 License
 
