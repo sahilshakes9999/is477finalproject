@@ -1,30 +1,30 @@
 # workflow/Snakefile
 
-RAW_SPOTIFY = "data/raw/spotify_raw.csv"
+RAW_SPOTIFY = "data/raw/spotify_raw_top50_bycountry.csv"
 RAW_SPOTIFY_CHECKED = "data/raw/spotify_raw_checked.csv"
-RAW_WORLDBANK = "data/raw/worldbank_raw.csv"
+RAW_WB = "data/raw/worldbank_raw.csv"
 
 PROC_SPOTIFY = "data/processed/spotify_clean.csv"
-PROC_WORLDBANK = "data/processed/worldbank_clean.csv"
+PROC_WB = "data/processed/worldbank_clean.csv"
 MERGED = "data/processed/music_culture_merged.csv"
 
 REPORT_SUMMARY = "reports/summary_stats.md"
-FIG_GDP = "figures/gdp_vs_streams.png"
-FIG_NET = "figures/internet_vs_streams.png"
+FIG1 = "figures/gdp_vs_popularity.png"
+FIG2 = "figures/internet_vs_popularity.png"
 
 rule all:
     input:
         RAW_SPOTIFY_CHECKED,
-        RAW_WORLDBANK,
+        RAW_WB,
         PROC_SPOTIFY,
-        PROC_WORLDBANK,
+        PROC_WB,
         MERGED,
         REPORT_SUMMARY,
-        FIG_GDP,
-        FIG_NET
+        FIG1,
+        FIG2
 
 rule acquire_worldbank:
-    output: RAW_WORLDBANK
+    output: RAW_WB
     shell:
         "python scripts/acquire_worldbank.py"
 
@@ -34,20 +34,22 @@ rule acquire_spotify:
     shell:
         "python scripts/acquire_spotify.py"
 
-rule clean_data:
-    input:
-        RAW_WORLDBANK,
-        RAW_SPOTIFY_CHECKED
-    output:
-        PROC_WORLDBANK,
-        PROC_SPOTIFY
+rule clean_spotify:
+    input: RAW_SPOTIFY_CHECKED
+    output: PROC_SPOTIFY
     shell:
-        "python scripts/clean_data.py"
+        "python scripts/clean_spotify.py"
+
+rule clean_worldbank:
+    input: RAW_WB
+    output: PROC_WB
+    shell:
+        "python scripts/clean_worldbank.py"
 
 rule integrate:
     input:
-        PROC_WORLDBANK,
-        PROC_SPOTIFY
+        PROC_SPOTIFY,
+        PROC_WB
     output:
         MERGED
     shell:
@@ -62,8 +64,8 @@ rule profile_quality:
 rule analyze:
     input: MERGED
     output:
-        FIG_GDP,
-        FIG_NET
+        FIG1,
+        FIG2
     shell:
         "python scripts/analyze.py"
 
