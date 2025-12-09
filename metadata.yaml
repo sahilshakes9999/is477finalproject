@@ -1,0 +1,20 @@
+title: "Analyzing Global Spotify Popularity Through Socioeconomic and Cultural Indicators"
+description: "A reproducible data integration project combining Spotify Top 50 charts with World Bank socioeconomic indicators to study cross-country cultural patterns."
+creator:
+  name: "Sahil Shaik"
+version: "1.0.0"
+license: "MIT"
+keywords:
+  - spotify
+  - socioeconomic data
+  - world bank
+  - cultural analytics
+datasets:
+  - name: "Spotify Top 50 by Country"
+    source: "Kaggle"
+    url: "https://www.kaggle.com/datasets/aeryss/spotify-top-50-by-country"
+    license: "Public dataset; no PII"
+  - name: "World Bank Indicators API"
+    source: "World Bank"
+    url: "https://data.worldbank.org"
+    license: "Open Data License with attribution"
