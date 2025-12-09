@@ -1,4 +1,5 @@
-# scripts/analyze.py
+#!/usr/bin/env python
+
 import pandas as pd
 import matplotlib.pyplot as plt
 from pathlib import Path
@@ -11,20 +12,20 @@ FIG_DIR.mkdir(parents=True, exist_ok=True)
 def main():
     df = pd.read_csv(PROC_DIR / "music_culture_merged.csv")
 
-    # GDP vs avg popularity
+    # GDP per capita vs average popularity
     plt.figure()
     plt.scatter(df["gdp_per_capita"], df["avg_popularity"])
     plt.xlabel("GDP per capita (USD)")
-    plt.ylabel("Average track popularity (Spotify)")
-    plt.title("GDP vs Average Spotify Track Popularity")
+    plt.ylabel("Average Spotify track popularity")
+    plt.title("GDP vs Spotify Popularity")
     plt.tight_layout()
     plt.savefig(FIG_DIR / "gdp_vs_popularity.png")
 
-    # Internet users vs avg popularity
+    # Internet users vs average popularity
     plt.figure()
     plt.scatter(df["internet_users_pct"], df["avg_popularity"])
     plt.xlabel("Internet users (% of population)")
-    plt.ylabel("Average track popularity (Spotify)")
+    plt.ylabel("Average Spotify track popularity")
     plt.title("Internet Access vs Spotify Popularity")
     plt.tight_layout()
     plt.savefig(FIG_DIR / "internet_vs_popularity.png")
