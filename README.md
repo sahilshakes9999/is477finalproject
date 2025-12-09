@@ -7,7 +7,7 @@
 
 ## Summary
 
-Music streaming platforms like Spotify have transformed how people access and engage with music across the globe. As listening behavior becomes increasingly digitized, streaming metrics offer a unique lens into cultural preferences and global media consumption patterns. At the same time, country-level socioeconomic factors such as income, connectivity, and population size—continue to shape how cultural products spread and which genres gain traction across regions.
+Music streaming platforms like Spotify have transformed how people access and engage with music across the globe. As listening behavior becomes increasingly digitized, streaming metrics offer a unique lens into cultural preferences and global media consumption patterns. At the same time, country-level socioeconomic factors such as income, connectivity, and population size continue to shape how cultural products spread and which genres gain traction across regions.
 
 This project investigates how Spotify track popularity varies across countries in relation to socioeconomic indicators from the World Bank. By integrating two distinct datasets (1) **Spotify Top 50 by Country** from Kaggle and (2) **World Bank Indicators API** (GDP per capita, internet users, and population), the study explores whether countries with different economic conditions exhibit differing patterns in music popularity. This approach aligns with core IS 477 concepts including data acquisition, cleaning, integration, workflow automation, and reproducibility.
 
