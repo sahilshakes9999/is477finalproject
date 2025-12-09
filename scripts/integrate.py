@@ -5,23 +5,28 @@ from pathlib import Path
 PROC_DIR = Path("data/processed")
 PROC_DIR.mkdir(parents=True, exist_ok=True)
 
-def main():
-    wb = pd.read_csv(PROC_DIR / "worldbank_clean.csv")
-    sp = pd.read_csv(PROC_DIR / "spotify_clean.csv")
 
-    # Simple integration on country_name (you can refine with manual mapping if needed)
-    merged = pd.merge(
-        sp,
-        wb,
-        how="inner",
-        left_on="country_name",
-        right_on="country_name",
-    )
+def main():
+    sp = pd.read_csv(PROC_DIR / "spotify_clean.csv")
+    wb = pd.read_csv(PROC_DIR / "worldbank_clean.csv")
+
+    # ensure consistent naming
+    sp["country_name"] = sp["country_name"].astype(str).str.strip()
+    wb["country_name"] = wb["country_name"].astype(str).str.strip()
+
+    # aggregate Spotify to country level
+    agg = sp.groupby("country_name").agg(
+        avg_popularity=("popularity", "mean"),
+        avg_bpm=("bpm", "mean"),
+        track_count=("track_name", "nunique"),
+    ).reset_index()
+
+    merged = pd.merge(agg, wb, on="country_name", how="inner")
 
     out_path = PROC_DIR / "music_culture_merged.csv"
     merged.to_csv(out_path, index=False)
-    print(f"Merged dataset saved to {out_path}, shape: {merged.shape}")
+    print(f"Merged dataset saved to {out_path}, shape = {merged.shape}")
+
 
 if __name__ == "__main__":
     main()
-
